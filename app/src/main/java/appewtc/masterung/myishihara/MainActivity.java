@@ -1,5 +1,6 @@
 package appewtc.masterung.myishihara;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -33,8 +34,24 @@ public class MainActivity extends ActionBarActivity {
         //button Controller
         buttonController();
 
+        radioButtonController();
+
 
     }   // onCreate
+
+    private void radioButtonController() {
+
+        ragChoice.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                //Sound Effect
+                MediaPlayer soundRadio = MediaPlayer.create(getBaseContext(), R.raw.effect_btn_shut);
+                soundRadio.start();
+            }   // event
+        });
+
+    }   // radioButtonController
 
     private void buttonController() {
 
@@ -42,7 +59,9 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
 
-
+                //Sound Efface
+                MediaPlayer soundButton = MediaPlayer.create(getBaseContext(), R.raw.effect_btn_long);
+                soundButton.start();
 
             }   //event
         });
