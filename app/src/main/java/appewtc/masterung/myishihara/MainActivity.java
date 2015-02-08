@@ -24,6 +24,7 @@ public class MainActivity extends ActionBarActivity {
     private Button btnAnswer;
     private int intRadio, intIndex;
     private MyModel objMyModel;
+    private String strChoice[];
 
 
     @Override
@@ -57,30 +58,48 @@ public class MainActivity extends ActionBarActivity {
 
                     case 2:
                         imvIshihara.setImageResource(R.drawable.ishihara_02);
+                        strChoice = getResources().getStringArray(R.array.time2);
+                        setUpChoice();
                         break;
                     case 3:
                         imvIshihara.setImageResource(R.drawable.ishihara_03);
+                        strChoice = getResources().getStringArray(R.array.time3);
+                        setUpChoice();
                         break;
                     case 4:
                         imvIshihara.setImageResource(R.drawable.ishihara_04);
+                        strChoice = getResources().getStringArray(R.array.time4);
+                        setUpChoice();
                         break;
                     case 5:
                         imvIshihara.setImageResource(R.drawable.ishihara_05);
+                        strChoice = getResources().getStringArray(R.array.time5);
+                        setUpChoice();
                         break;
                     case 6:
                         imvIshihara.setImageResource(R.drawable.ishihara_06);
+                        strChoice = getResources().getStringArray(R.array.time6);
+                        setUpChoice();
                         break;
                     case 7:
                         imvIshihara.setImageResource(R.drawable.ishihara_07);
+                        strChoice = getResources().getStringArray(R.array.time7);
+                        setUpChoice();
                         break;
                     case 8:
                         imvIshihara.setImageResource(R.drawable.ishihara_08);
+                        strChoice = getResources().getStringArray(R.array.time8);
+                        setUpChoice();
                         break;
                     case 9:
                         imvIshihara.setImageResource(R.drawable.ishihara_09);
+                        strChoice = getResources().getStringArray(R.array.time9);
+                        setUpChoice();
                         break;
                     case 10:
                         imvIshihara.setImageResource(R.drawable.ishihara_10);
+                        strChoice = getResources().getStringArray(R.array.time10);
+                        setUpChoice();
                         break;
 
                 }   // switch
@@ -90,6 +109,15 @@ public class MainActivity extends ActionBarActivity {
 
 
     }   // aboutMyModel
+
+    private void setUpChoice() {
+
+        radChoice1.setText(strChoice[0]);
+        radChoice2.setText(strChoice[1]);
+        radChoice3.setText(strChoice[2]);
+        radChoice4.setText(strChoice[3]);
+
+    }   // setUpChoice
 
     private void radioButtonController() {
 
