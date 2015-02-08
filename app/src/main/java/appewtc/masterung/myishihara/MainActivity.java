@@ -21,6 +21,7 @@ public class MainActivity extends ActionBarActivity {
     private RadioGroup ragChoice;
     private RadioButton radChoice1, radChoice2, radChoice3, radChoice4;
     private Button btnAnswer;
+    private int intRadio;
 
 
     @Override
@@ -48,6 +49,25 @@ public class MainActivity extends ActionBarActivity {
                 //Sound Effect
                 MediaPlayer soundRadio = MediaPlayer.create(getBaseContext(), R.raw.effect_btn_shut);
                 soundRadio.start();
+
+                //SetUp intRadio
+                switch (checkedId) {
+
+                    case R.id.radioButton:
+                        break;
+                    case R.id.radioButton2:
+                        break;
+                    case R.id.radioButton3:
+                        break;
+                    case R.id.radioButton4:
+                        break;
+                    default:
+                        break;
+
+                }   // switch
+
+
+
             }   // event
         });
 
