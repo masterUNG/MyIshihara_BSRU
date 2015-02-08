@@ -22,7 +22,7 @@ public class MainActivity extends ActionBarActivity {
     private RadioGroup ragChoice;
     private RadioButton radChoice1, radChoice2, radChoice3, radChoice4;
     private Button btnAnswer;
-    private int intRadio, intIndex;
+    private int intRadio, intIndex, intScore, intUserChoose[], intAnswerTrue[];
     private MyModel objMyModel;
     private String strChoice[];
 
@@ -44,7 +44,28 @@ public class MainActivity extends ActionBarActivity {
         //About MyModel
         aboutMyModel();
 
+        //setUp Array
+        setUpArray();
+
     }   // onCreate
+
+    private void setUpArray() {
+
+        intUserChoose = new int[10];
+        intAnswerTrue = new int[10];
+
+        intAnswerTrue[0] = 1;
+        intAnswerTrue[1] = 2;
+        intAnswerTrue[2] = 3;
+        intAnswerTrue[3] = 1;
+        intAnswerTrue[4] = 2;
+        intAnswerTrue[5] = 3;
+        intAnswerTrue[6] = 1;
+        intAnswerTrue[7] = 2;
+        intAnswerTrue[8] = 4;
+        intAnswerTrue[9] = 4;
+
+    }   // setUpArray
 
     private void aboutMyModel() {
 
@@ -184,18 +205,34 @@ public class MainActivity extends ActionBarActivity {
 
         } else {
 
+            checkScore();
+
             checkTime();
 
         }
 
     }   //checkZero
 
+    private void checkScore() {
+
+        intUserChoose[intIndex] = intRadio;
+
+        if (intUserChoose[intIndex] == intAnswerTrue[intIndex] ) {
+            intScore += 1;
+        }
+
+    }   //checkScore
+
     private void checkTime() {
 
         if (intIndex == 9) {
 
             Intent objIntent = new Intent(MainActivity.this, ShowScoreActivity.class);
+
+            objIntent.putExtra("Score", intScore);
+
             startActivity(objIntent);
+            finish();
 
         } else {
 
