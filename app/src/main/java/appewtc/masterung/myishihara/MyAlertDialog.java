@@ -12,11 +12,11 @@ public class MyAlertDialog {
     private AlertDialog.Builder objAlert;
 
 
-    public void answer(Context context) {
+    public void answer(Context context, String strTitle) {
 
         objAlert = new AlertDialog.Builder(context);
         objAlert.setIcon(R.drawable.danger);
-        objAlert.setTitle("กรุณาตอบคำถาม");
+        objAlert.setTitle(strTitle);
         objAlert.setMessage("กรุณาตอบคำถาม เว้ยเห้ย");
         objAlert.setCancelable(false);
         objAlert.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {

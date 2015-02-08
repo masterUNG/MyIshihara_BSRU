@@ -103,7 +103,7 @@ public class MainActivity extends ActionBarActivity {
         if (intRadio == 0) {
 
             MyAlertDialog objMyAlert = new MyAlertDialog();
-            objMyAlert.answer(MainActivity.this);
+            objMyAlert.answer(MainActivity.this, "กรุณาตอบคำถาม");
 
         } else {
 
