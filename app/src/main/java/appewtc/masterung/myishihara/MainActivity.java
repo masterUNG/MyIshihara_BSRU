@@ -54,14 +54,19 @@ public class MainActivity extends ActionBarActivity {
                 switch (checkedId) {
 
                     case R.id.radioButton:
+                        intRadio = 1;
                         break;
                     case R.id.radioButton2:
+                        intRadio = 2;
                         break;
                     case R.id.radioButton3:
+                        intRadio = 3;
                         break;
                     case R.id.radioButton4:
+                        intRadio = 4;
                         break;
                     default:
+                        intRadio = 0;
                         break;
 
                 }   // switch
@@ -83,10 +88,27 @@ public class MainActivity extends ActionBarActivity {
                 MediaPlayer soundButton = MediaPlayer.create(getBaseContext(), R.raw.effect_btn_long);
                 soundButton.start();
 
+                //Check Zero
+                checkZero();
+
+
             }   //event
         });
 
     }   // buttonController
+
+    private void checkZero() {
+
+        if (intRadio == 0) {
+
+            MyAlertDialog objMyAlert = new MyAlertDialog();
+            objMyAlert.answer(MainActivity.this);
+
+        } else {
+
+        }
+
+    }   //checkZero
 
     private void bindWidget() {
 
